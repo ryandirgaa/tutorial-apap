@@ -5,12 +5,12 @@
 ---
 ## Tutorial 1
 
-## ** What I have learned today **
+# What I have learned today 
 
 Yang telah saya pelajari hari ini adalah mempelajari bagaimana cara membuat repository. Selain itu, di sini juga mengembangkan pengetahuan saya terkait perintah-perintah git seperti git add, git commit, git push, git branch, git checkout, dan lain-lain yang tentu akan sangat bermanfaat untuk ke depannya. Saya juga mempelajari penggunaan IntellijIDEA karena saya baru kali ini menggunakan IDE tersebut. Tak hanya itu, lab ini sekaligus bisa mengingat kembali memori saya terkait Spring Boot yang mana secara dasar telah dipelajari di DDP2.
 
 
-## ** Github **
+# Github
 
 ### Apa itu Issue Tracker? Apa saja masalah yang dapat diselesaikan dengan Issue Tracker?
 
@@ -26,7 +26,7 @@ Git merge dan git merge --squash sebenarnya sama-sama menggabungkan antar bebera
 - VSC dapat mencegah terjadinya kerusakan pada source code akibat terjadinya konflik ketika developer ingin push program yang telah dibuat atau diubah
 
 
-## ** Spring **
+# Spring
 
 ### Apa itu library & dependency?
 Pada Spring, library merupakan kumpulan dari fungsi dan program yang dapat langsung digunakan oleh programmer dalam mengembangkan aplikasi. Selain itu, dependency merupakan aspek dasar dari Spring yang mana wadah Spring menyunt mendasar dari kerangka Spring , di mana wadah Spring "menyuntikkan" dari objek menuju objek lainnya. 
@@ -41,5 +41,5 @@ Spring framework tentu tidak hanya dapat digunakan untuk mengembangkan web, namu
 Pada dasarnya, @RequestParam dan @PathVariable sama-sama digunakan untuk megekstrak nilai dari HTTP Request. Yang menyebabkan perbedaan serta kapan masing-masing anotasi tersebut digunakan adalah @RequestParam digunakan untuk mendapat parameter request URL, sedangkan @PathVariable digunakan untuk mengekstrak request URI. 
 
 
-## ** What I did not understand **
+# What I did not understand
 Saya sebenarnya masih belum terlalu mengerti terkait anotasi-anotasi yang digunakan serta beberapa hal di html file seperti th:text, th:if dan lainnya. Mungkin karena saya belum terlalu familiar dengan proyek web yang menggunakan bahasa Java. Selain itu, saya sudah memahami materi lainnya, termasuk yang telah dibahas di kelas.
