@@ -21,11 +21,12 @@ http://localhost:8080/kebun-safari?id=1 karena Papa APAP memiliki id 1.
 Untuk kali ini, saya menambah kebun safari yang mana id=2, nama=Pacil, alamat=Depok, dan noTelepon=01234567890 yang mana saya mengakses :
 http://localhost:8080/kebun-safari/add?id=2&nama=Pacil&alamat=Depok&noTelepon=01234567890
 <br>
-![enter image description here](https://ibb.co/0qbDj4p)
+![addkebunsafari](https://user-images.githubusercontent.com/90308675/133452219-1269f483-edc3-4f1e-b1f9-fd221e60006a.png)
 <br>
 Sehingga nanti menjadi ada dua kebun safari jika sudah mengakses http://localhost:8080/
 <br>
-![enter image description here](https://ibb.co/R0fhgrW)
+![kebunsafarilist](https://user-images.githubusercontent.com/90308675/133452277-64d1a5a5-dbb3-4933-a952-bbb4cef1c471.png)
+
 
 ---
 ## Tutorial 1
