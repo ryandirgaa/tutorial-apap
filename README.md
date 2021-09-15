@@ -5,6 +5,7 @@
 ---
 ## Tutorial 1
 
+
 # What I have learned today 
 
 Yang telah saya pelajari hari ini adalah mempelajari bagaimana cara membuat repository. Selain itu, di sini juga mengembangkan pengetahuan saya terkait perintah-perintah git seperti git add, git commit, git push, git branch, git checkout, dan lain-lain yang tentu akan sangat bermanfaat untuk ke depannya. Saya juga mempelajari penggunaan IntellijIDEA karena saya baru kali ini menggunakan IDE tersebut. Tak hanya itu, lab ini sekaligus bisa mengingat kembali memori saya terkait Spring Boot yang mana secara dasar telah dipelajari di DDP2.
@@ -42,4 +43,5 @@ Pada dasarnya, @RequestParam dan @PathVariable sama-sama digunakan untuk megekst
 
 
 # What I did not understand
+
 Saya sebenarnya masih belum terlalu mengerti terkait anotasi-anotasi yang digunakan serta beberapa hal di html file seperti th:text, th:if dan lainnya. Mungkin karena saya belum terlalu familiar dengan proyek web yang menggunakan bahasa Java. Selain itu, saya sudah memahami materi lainnya, termasuk yang telah dibahas di kelas.
