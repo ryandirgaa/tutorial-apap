@@ -13,8 +13,8 @@ Autowriting merupakan salah satu implementasi dari spring dependency injection. 
 
 #### Pertanyaan 3: Cobalah untuk menambahkan sebuah Kebun dengan mengakses link berikut: http://localhost:8080/kebun-safari/add?id=1&nama=Papa%20APAP&alamat=Maung%20Fasilkom, Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi.
 Terjadi Whitetable Error Page dengan tipe Bad Request dan status=400. Hal ini disebabkan path yang dijalankan tidak sesuai dengan parameter yang perlu dimasukkan, yaitu user tidak memasukan parameter noTelepon padahal parameter tersebut perlu diisi.
-<br>
-####Pertanyaan 4: Jika Papa APAP ingin melihat Kebun Safari dengan nama Papa APAP, link apa yang harus diakses?**
+
+####Pertanyaan 4: Jika Papa APAP ingin melihat Kebun Safari dengan nama Papa APAP, link apa yang harus diakses?
 http://localhost:8080/kebun-safari?id=1 karena Papa APAP memiliki id 1.
 
 ####Pertanyaan 5: Tambahkan 1 contoh Kebun Safari lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/ , apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
