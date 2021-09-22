@@ -3,6 +3,30 @@
 * **Ryan Dirga Aidil Hakim** - *1906306741* - *A*
 
 ---
+## Tutorial 2
+
+### Pertanyaan 1: Cobalah untuk menambahkan sebuah Kebun dengan mengakses link berikut setelah menjalankan program: http://localhost:8080/kebun-safari/add?id=1&nama=Papa%20APAP&alamat=Maung%20Fasilkom&noTelepon=081xxx, Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi
+Terjadi Whitetable Error Page dengan tipe Internal Server Error dan status=500. Hal tersebut dikarenakan baru me-return add-kebun-safari.html di method addKebunSafari, namun file tersebut belum ada.
+
+### Pertanyaan 2: Menurut kamu anotasi @Autowired pada class Controller tersebut merupakan implementasi dari konsep apa? Dan jelaskan secara singkat cara kerja @Autowired tersebut dalam konteks service dan controller yang telah kamu buat
+Autowriting merupakan salah satu implementasi dari spring dependency injection. Autowriting dilakukan dengan anotasi @Autowired sehingga kita tidak perlu lagi menambahkan setter method atau menambahkan parameter pada constructor.
+
+### Pertanyaan 3: Cobalah untuk menambahkan sebuah Kebun dengan mengakses link berikut: http://localhost:8080/kebun-safari/add?id=1&nama=Papa%20APAP&alamat=Maung%20Fasilkom, Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi.
+Terjadi Whitetable Error Page dengan tipe Bad Request dan status=400. Hal ini disebabkan path yang dijalankan tidak sesuai dengan parameter yang perlu dimasukkan, yaitu user tidak memasukan parameter noTelepon padahal parameter tersebut perlu diisi.
+
+### Pertanyaan 4: Jika Papa APAP ingin melihat Kebun Safari dengan nama Papa APAP, link apa yang harus diakses?
+http://localhost:8080/kebun-safari?id=1 karena Papa APAP memiliki id 1.
+
+### Pertanyaan 5: Tambahkan 1 contoh Kebun Safari lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/ , apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
+Untuk kali ini, saya menambah kebun safari yang mana id=2, nama=Pacil, alamat=Depok, dan noTelepon=01234567890 yang mana saya mengakses :
+http://localhost:8080/kebun-safari/add?id=2&nama=Pacil&alamat=Depok&noTelepon=01234567890
+![addkebunsafari](https://user-images.githubusercontent.com/90308675/133452835-e0496a88-24d9-43c6-bb13-331261d4fbcf.png)
+Sehingga nanti menjadi ada dua kebun safari jika sudah mengakses http://localhost:8080/
+![kebunsafarilist](https://user-images.githubusercontent.com/90308675/133452762-a1850a13-11c7-4df3-93fa-57bdf08e2cec.png)
+
+
+
+---
 ## Tutorial 1
 
 
