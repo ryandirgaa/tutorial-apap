@@ -3,6 +3,27 @@
 * **Ryan Dirga Aidil Hakim** - *1906306741* - *A*
 
 ---
+## Tutorial 3
+
+### Tolong jelaskan secara singkat apa kegunaan dari anotasi-anotasi yang ada pada model (@AllArgsConstructor, @NoArgsConstructor, @Setter, @Getter, @Entity, @Table)
+@AllArgsConstructor digunakan untuk menghasilkan constructor yang memerlukan argumen pada tiap bidang di annotated class. @NoArgsConstructor digunakan untuk menghasilkan constructor tanpa parameter. @Setter dan @Getter digunakan untuk menghasilkan setter dan getter pada model class sehingga kita tidak perlu lagi mengimplementasikan method mutator dan accessor secara manual. @Entity digunakan untuk menjelaskan bahwa sebuah kelas adalah satu entity dan dipetakan ke dalam database. Sedangkan @Table digunakan untuk sebagai spesifikasi nama tabel di sebuah database yang mana akan dipakai untuk pemetaan.
+
+### Pada class CabangDB, terdapat method findByNoCabang, apakah kegunaan dari method tersebut?
+Method tersebut digunakan untuk menyeleksi pencarian entity cabang berdasarkan nomor cabang.  
+
+### Jelaskan perbedaan kegunaan dari anotasi @JoinTable dan @JoinColumn
+1. @JoinTable digunakan ketika kita sedang mengelola hubungan antara entity dengan entity di tabel lain, sedangkan @JoinColumn digunakan ketika kita suatu entity memiliki hubungan foreign key dengan entity lainnya.
+2. @JoinTable cocok digunakan ketika kita memerlukan database yang dinormalisasi guna mengurangi redundant, sedangkan @JoinColumn cocok digunakan ketika tidak ada keperluan untuk join ke tabel tambahan.
+
+### Pada class PegawaiModel, digunakan anotasi @JoinColumn pada atribut cabang, apa kegunaan dari name, referencedColumnName, dan nullable dalam anotasi tersebut? dan apa perbedaan nullable dan penggunaan anotasi @NotNull
+Name merupakan nama dari column. referencedColumnName merupakan nama kolom dari referensi kolom yang memiliki anotasi @JoinColumn. Sedangkan nullable merupakan bisa atau tidaknya null diinput ke dalam kolom yang mana bernilai true atau false. Yang membedakan antara nullable dengan NotNull adalah not null merupakan validasi bean validation yang berperan dalam tidak adanya batas pada null constraint pada entity, sedangkan nullable menyatakan null constraint yang ditaruh di suatu kolom dan adanya batas pada null constraint.
+
+### Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER
+Pada FetchType.LAZY, hibernate tidak load semua data, melainkan hanya me-load data yang ada pada child entity sehingga dapat mengurangi kebutuhan memori. Pada CascadeType.ALL, aktivitas PERSIST, REMOVE, REFRESH, MERGE, DETACH dapat dilakukan dan dapat diteruskan kepada child entity. Sedangkan pada FetchType.EAGER, hibernate me-load semua data, termasuk entity induknya sehingga menyebabkan memakan lebih banyak memori dibandingkan dengan LAZY.
+
+
+
+---
 ## Tutorial 2
 
 ### Pertanyaan 1: Cobalah untuk menambahkan sebuah Kebun dengan mengakses link berikut setelah menjalankan program: http://localhost:8080/kebun-safari/add?id=1&nama=Papa%20APAP&alamat=Maung%20Fasilkom&noTelepon=081xxx, Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi
