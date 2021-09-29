@@ -3,6 +3,8 @@ package apap.tutorial.emsidi.service;
 import apap.tutorial.emsidi.model.CabangModel;
 import apap.tutorial.emsidi.model.PegawaiModel;
 
+import java.util.List;
+
 public interface PegawaiService {
     void addPegawai(PegawaiModel pegawai);
 
@@ -12,5 +14,8 @@ public interface PegawaiService {
     //Method untuk delete pegawai (menjawab latihan no 3)
     void deletePegawai(PegawaiModel pegawai);
 
+    List<PegawaiModel> getPegawaiList();
+
     PegawaiModel getPegawaiByNoPegawai(Long noPegawai);
+
 }

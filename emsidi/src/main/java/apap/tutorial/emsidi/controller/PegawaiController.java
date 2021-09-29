@@ -2,6 +2,7 @@ package apap.tutorial.emsidi.controller;
 
 import apap.tutorial.emsidi.model.CabangModel;
 import apap.tutorial.emsidi.model.PegawaiModel;
+import apap.tutorial.emsidi.repository.PegawaiDb;
 import apap.tutorial.emsidi.service.CabangService;
 import apap.tutorial.emsidi.service.PegawaiService;
 import org.apache.tomcat.jni.Local;
@@ -10,6 +11,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
+
+import java.util.List;
 
 import java.time.LocalTime;
 
@@ -28,6 +31,7 @@ public class PegawaiController {
     public String addPegawaiForm(@PathVariable Long noCabang, Model model){
         PegawaiModel pegawai = new PegawaiModel();
         CabangModel cabang = cabangService.getCabangByNoCabang(noCabang);
+
         pegawai.setCabang(cabang);
         model.addAttribute("noCabang", noCabang);
         model.addAttribute("pegawai", pegawai);
@@ -36,12 +40,31 @@ public class PegawaiController {
     }
 
     @PostMapping("/pegawai/add")
-    public String addPegawaiSubmit(@ModelAttribute PegawaiModel pegawai, Model model){
-        pegawaiService.addPegawai(pegawai);
-        model.addAttribute("noCabang", pegawai.getCabang().getNoCabang());
-        model.addAttribute("namaPegawai", pegawai.getNamaPegawai());
+    public String addPegawaiSubmit(@ModelAttribute PegawaiModel pegawai, String namaPegawai, CabangModel cabang, Model model){
+        List<PegawaiModel> listPegawai = pegawaiService.getPegawaiList();
 
-        return "add-pegawai";
+        boolean can = true;
+
+        for (int i = 0; i < listPegawai.size(); i++) {
+            if(listPegawai.get(i).getNamaPegawai().equals(pegawai.getNamaPegawai())){
+                can = false;
+                break;
+            }
+            else{
+                continue;
+            }
+        }
+        if(can == true){
+            pegawaiService.addPegawai(pegawai);
+            model.addAttribute("noCabang", pegawai.getCabang().getNoCabang());
+            model.addAttribute("namaPegawai", pegawai.getNamaPegawai());
+
+            return "add-pegawai";
+        }
+        else{
+            return "error";
+        }
+
     }
 
     /* Method tambahan untuk menjawab latihan nomor 2

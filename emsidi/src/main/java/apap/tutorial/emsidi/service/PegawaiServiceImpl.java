@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -33,10 +34,16 @@ public class PegawaiServiceImpl implements PegawaiService {
     public void deletePegawai(PegawaiModel pegawai){ pegawaiDb.delete(pegawai); }
 
     @Override
+    public List<PegawaiModel> getPegawaiList(){
+        return pegawaiDb.findAll();
+    }
+
+    @Override
     public PegawaiModel getPegawaiByNoPegawai(Long noPegawai){
         Optional<PegawaiModel> pegawai = pegawaiDb.findByNoPegawai(noPegawai);
         if(pegawai.isPresent())
             return pegawai.get();
         return null;
     }
+
 }
