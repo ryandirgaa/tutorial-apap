@@ -91,4 +91,19 @@ public class PegawaiController {
         }
     }
 
+    @PostMapping("/pegawai/delete")
+    public String deletePegawaiSubmit(@ModelAttribute CabangModel cabang, Model model){
+        LocalTime now = LocalTime.now();
+        System.out.println(cabang.getNoCabang());
+        if(now.isBefore(cabang.getWaktuBuka()) || now.isAfter(cabang.getWaktuTutup())){
+            for(PegawaiModel pegawai : cabang.getListPegawai()){
+                pegawaiService.deletePegawai(pegawai);
+            }
+            model.addAttribute("noCabang", cabang.getNoCabang());
+            return "delete-pegawai";
+        }
+
+        return "error";
+    }
+
 }
