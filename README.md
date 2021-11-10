@@ -2,6 +2,21 @@
 ## Authors
 * **Ryan Dirga Aidil Hakim** - *1906306741* - *A*
 
+
+---
+## Tutorial 4
+
+### Jelaskan perbedaan th:include dan th:replace!
+Secara garis besar th:include dan th:replace mempunyai tugas yang sama. Namun, yang membedakan di antara keduanya adalah th:include menyertakan fragmen ke dalam tag hostnya, sedangkan th:replace mengganti tag host serta menghapus tag host tersebut yang mana akan menambahkan fragmen yang telah ditentukan.
+
+### Jelaskan apa fungsi dari th:object!
+th:object berfungsi untuk menampung suatu object yang berasal dari controller.
+
+### Jelaskan perbedaan dari * dan $ pada saat penggunaan th:object! Kapan harus dipakai?
+*{} digunakan untuk mendeklarasikan variabel dari controller yang mana hanya akan dieksekusi pada objek yang telah dipilih sebelumnya. Sedangkan ${...} digunakan untuk mendeklarasikan sebuah variable tanpa harus objek tersebut telah dipilih sebelumnya untuk bisa dieksekusi
+
+
+
 ---
 ## Tutorial 3
 

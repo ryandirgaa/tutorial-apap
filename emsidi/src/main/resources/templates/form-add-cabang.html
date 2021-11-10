@@ -2,8 +2,20 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <title>Emsidi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"></head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <object th:include="fragments/fragment :: css" th:remove="tag"/>
+    <object th:include="fragments/fragment :: js" th:remove="tag"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
 <body>
+<nav th:replace="fragments/fragment :: navbar('Cabang')"/>
 <div class="container">
     <div class="card m-4 p-4">
         <div class="card-body">
@@ -12,25 +24,71 @@
                 <br>
                 <form th:action="@{/cabang/add}" th:object="${cabang}" method="POST">
                     Nama Cabang : <br>
-                    <input required class="form-control" type="text" name="namaCabang"/>
+                    <input required class="form-control" type="text" name="namaCabang"
+                           th:if="${cabang.namaCabang == null}" />
+                    <input required class="form-control" type="text" name="namaCabang"
+                           th:if="${cabang.namaCabang != null}" th:field="${cabang.namaCabang}"/>
                     <br><br>
 
                     Alamat : <br>
-                    <input required class="form-control" type="text" name="alamatCabang"/>
+                    <input required class="form-control" type="text" name="alamatCabang"
+                           th:if="${cabang.alamatCabang == null}" />
+                    <input required class="form-control" type="text" name="alamatCabang"
+                           th:if="${cabang.alamatCabang != null}" th:field="${cabang.alamatCabang}"/>
                     <br><br>
 
                     Nomor Telepon : <br>
-                    <input required class="form-control" type="text" name="noTeleponCabang"/>
+                    <input required class="form-control" type="text" name="noTeleponCabang"
+                           th:if="${cabang.noTeleponCabang == null}" />
+                    <input required class="form-control" type="text" name="noTeleponCabang"
+                           th:if="${cabang.noTeleponCabang != null}" th:field="${cabang.noTeleponCabang}"/>
                     <br><br>
 
                     Waktu Buka : <br>
-                    <input required class="form-control" type="time" name="waktuBuka" />
+                    <input required class="form-control" type="time" name="waktuBuka"
+                           th:if="${cabang.waktuBuka == null}" />
+                    <input required class="form-control" type="time" name="waktuBuka"
+                           th:if="${cabang.waktuBuka != null}" th:field="${cabang.waktuBuka}"/>
                     <br><br>
 
                     Waktu Tutup : <br>
-                    <input required class="form-control" type="time" name="waktuTutup" />
+                    <input required class="form-control" type="time" name="waktuTutup"
+                           th:if="${cabang.waktuTutup == null}" />
+                    <input required class="form-control" type="time" name="waktuTutup"
+                           th:if="${cabang.waktuTutup != null}" th:field="${cabang.waktuTutup}"/>
                     <br><br>
-
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Nama menu</th>
+                            <th>
+                                <button class="btn btn-primary" type="submit" name="addRow">Tambah row</button>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input required class="form-control" type="hidden" name="listMenu"/>
+                                <div th:each="i: ${#numbers.sequence(1, count)}">
+                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                        <div th:each="menu, iterationStatus : ${listMenu}">
+                                            <option th:value="${menu}" th:text="${menu.namaMenu}"/>
+                                        </div>
+                                    </select>
+                                    <br><br>
+                                </div>
+                            </td>
+                            <td>
+                                <div th:each="i: ${#numbers.sequence(1, count)}">
+                                    <button class="btn btn-danger" type="submit" name="deleteRow">Hapus</button>
+                                    <br><br>
+                                </div>
+                                <br><br>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                     <button class="btn btn-primary" type="submit">Submit</button>
                     <a class="btn btn-primary" href="/">Cancel</a>
                 </form>

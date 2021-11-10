@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>404 not found</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"/>
+    <object th:include="fragments/fragment :: js" th:remove="tag"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<nav th:replace="fragments/fragment :: navbar('400')"/>
+<div class="container-fluid">
+    <h2>Bad Request</h2>
+    <a th:href="@{/}">Kembali ke home</a>
+</div>
+</body>
+</html>
