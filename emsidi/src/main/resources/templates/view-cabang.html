@@ -73,20 +73,20 @@
                     <tr>
                         <th>No</th>
                         <th>No Menu</th>
-                        <th>Nama Menu</th>
+                        <th>Nama</th>
                         <th>Deskripsi</th>
                         <th>Sedang Tersedia</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="menu, iterationStatus : ${listMenu}"
-                        th:style="${iterationStatus.even} ? 'font-weight:bold;'">
-                        <td th:text="${iterationStatus.count}"></td>
+                    <tr th:each="menu, iterationStat : ${cabang.listMenu}"
+                        th:style="${iterationStat.even} ? 'font-weight:bold;'">
+                        <td th:text="${iterationStat.count}"></td>
                         <td th:text="${menu.noMenu}"></td>
                         <td th:text="${menu.namaMenu}"></td>
                         <td th:text="${menu.deskripsiMenu}"></td>
-                        <td th:if="${menu.isAvailable} == 0">TIDAK</td>
-                        <td th:if="${menu.isAvailable} == 1">YA</td>
+                        <td th:if="${menu.isAvailable} == true">YA</td>
+                        <td th:if="${menu.isAvailable} == false">TIDAK</td>
                     </tr>
                     </tbody>
                 </table>
