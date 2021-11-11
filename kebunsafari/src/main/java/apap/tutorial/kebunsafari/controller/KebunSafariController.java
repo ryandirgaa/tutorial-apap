@@ -28,7 +28,6 @@ public class KebunSafariController {
     ) {
         //Membuat objek KebunSafari baru
         KebunSafariModel kebunSafari = new KebunSafariModel(idKebunSafari, namaKebunSafari, alamat, noTelepon);
-
         //Memanggil service addKebunSafari
         kebunSafariService.addKebunSafari(kebunSafari);
 
@@ -108,5 +107,15 @@ public class KebunSafariController {
             return "error";
         }
 
+    }
+
+    @RequestMapping("/kebun-safari/delete-by-name")
+    public String deleteKebunSafariByNama(@RequestParam(value = "nama", required = true) String namaKebunSafari, Model model){
+        KebunSafariModel kebunSafari = kebunSafariService.getKebunSafariByNamaKebunSafari(namaKebunSafari);
+        kebunSafariService.deleteKebunSafariByNamaKebunSafari(namaKebunSafari);
+
+        model.addAttribute("kebunSafari", kebunSafari);
+
+        return "delete-kebun-by-nama";
     }
 }
