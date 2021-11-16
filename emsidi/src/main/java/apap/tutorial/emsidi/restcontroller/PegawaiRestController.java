@@ -49,6 +49,22 @@ public class PegawaiRestController {
         }
     }
 
+    @GetMapping(value = "/pegawai/jenisKelamin/{jnis}")
+    private List<PegawaiModel> getPegawaiByGender(@PathVariable("jnis") int jenisKelamin){
+        String gender = "";
+        if(jenisKelamin==0) gender = "Perempuan";
+        else if(jenisKelamin==1) gender = "Laki-laki";
+
+        try {
+            return pegawaiRestService.getPegawaiByJenisKelamin(jenisKelamin);
+        }
+        catch (NoSuchElementException e){
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "Tidak ada pegawai dengan jenis kelamin " + gender + " Not Found."
+            );
+        }
+    }
+
     @DeleteMapping(value = "/pegawai/{noPegawai}")
     private ResponseEntity deletePegawai(@PathVariable("noPegawai") Long noPegawai){
         try {

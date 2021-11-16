@@ -10,6 +10,8 @@ public interface PegawaiRestService {
     PegawaiModel createPegawai(PegawaiModel pegawai);
     List<PegawaiModel> retrieveListPegawai();
     PegawaiModel getPegawaiByNoPegawai(Long noPegawai);
+    List<PegawaiModel> getPegawaiByJenisKelamin(int jenisKelamin);
+//    PegawaiModel getPegawaiByJenisKelamin(int jenisKelamin);
     PegawaiModel updatePegawai(Long noPegawai, PegawaiModel pegawai);
     void deletePegawai(Long noPegawai);
     PegawaiModel updateUmur(Long noPegawai, PegawaiModel pegawaiUpdate);
