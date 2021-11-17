@@ -52,6 +52,14 @@
             <input class="form-control mr-sm-2" type="search" name="noCabang" placeholder="No Cabang" aria-label="Search">
             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>
+        <ul class="navbar-nav pull-right">
+            <li class="nav-item active">
+                <a class="nav-item nav-link text-light" th:href="@{/user/update-password}">Update Password</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav pull-right">
+            <a class="nav-item nav-link text-light" th:href="@{/logout}">Logout</a>
+        </ul>
     </div>
 </nav>
 

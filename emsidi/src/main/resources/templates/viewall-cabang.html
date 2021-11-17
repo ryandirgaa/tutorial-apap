@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
     <title>Emsidi</title>
@@ -31,8 +32,10 @@
                     <th>No Telepon</th>
                     <th>Jam Operasional</th>
                     <th>Detail</th>
-                    <th>Update</th>
-                    <th>Delete</th>
+                    <div sec:authorize="hasAuthority('Manajer')">
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </div>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,12 +49,14 @@
                     <td>
                         <a class="btn btn-primary" th:href="@{/cabang/view(noCabang=${cabang.noCabang})}">Lihat</a>
                     </td>
-                    <td>
-                        <a class="btn btn-primary" th:href="@{/cabang/update/} + ${cabang.noCabang}">Update</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-primary" th:href="@{/cabang/delete/} + ${cabang.noCabang}">Delete</a>
-                    </td>
+                    <div sec:authorize="hasAuthority('Manajer')">
+                        <td>
+                            <a class="btn btn-primary" th:href="@{/cabang/update/} + ${cabang.noCabang}">Update</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" th:href="@{/cabang/delete/} + ${cabang.noCabang}">Delete</a>
+                        </td>
+                    </div>
                 </tr>
                 </tbody>
             </table>
@@ -59,23 +64,6 @@
     <div th:unless="*{listCabang.size() != 0}">
         <h2 th:text="'Tidak ada cabang'"></h2>
     </div>
-<!--    <div th:each="cabang : ${listCabang}" class="card m-4 p-4">-->
-<!--        <div class="card-body">-->
-<!--            <div class="justify-content-center">-->
-<!--                <p th:text="'Nomor Cabang : ' + ${cabang.noCabang}"></p>-->
-<!--                <p th:text="'Nama Cabang : ' + ${cabang.namaCabang}"></p>-->
-<!--                <p th:text="'Alamat Cabang : ' + ${cabang.alamatCabang}"></p>-->
-<!--                <p th:text="'Nomor Telepon Cabang : ' + ${cabang.noTeleponCabang}"></p>-->
-<!--                <p th:text="'Waktu Buka : ' + ${cabang.waktuBuka}"></p>-->
-<!--                <p th:text="'Waktu Tutup : ' + ${cabang.waktuTutup}"></p>-->
-<!--                <br>-->
-<!--                <a class="btn btn-primary" th:href="@{/cabang/view(noCabang=${cabang.noCabang})}">Lihat Detail Cabang</a>-->
-<!--                <a class="btn btn-primary" th:href="@{/cabang/update/} + ${cabang.noCabang}">Update Cabang</a>-->
-<!--                <a class="btn btn-primary" th:href="@{/cabang/delete/} + ${cabang.noCabang}">Delete Cabang</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <br>-->
-<!--    </div>-->
     <a class="btn btn-primary" href="/">Home</a>
 </div>
 </body>
