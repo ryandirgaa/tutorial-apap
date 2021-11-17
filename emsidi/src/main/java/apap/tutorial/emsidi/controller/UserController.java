@@ -28,7 +28,8 @@ public class UserController {
     public boolean validatePassword(String password) {
         if (password.length()>=8
                 && Pattern.compile("[0-9]").matcher(password).find()
-                && Pattern.compile("[a-zA-Z]").matcher(password).find()
+                && Pattern.compile("\\p{Upper}").matcher(password).find()
+                && Pattern.compile("\\p{Lower}").matcher(password).find()
                 && Pattern.compile("\\p{Punct}").matcher(password).find()) {
             return true;
         }
