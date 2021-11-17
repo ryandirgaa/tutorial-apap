@@ -15,8 +15,8 @@ BCryptPasswordEncoder merupakan implementasi dari password encoder menggunakan a
 ### Jelaskan secara singkat apa itu UUID beserta penggunaannya!
 UUID merupakan kumpulan dari 32 character yang disusun secara acak dengan tujuan menjamin bahwa setiap data bersifat unik yang mana sangat kecil kemungkinan terdapat UUID yang sama dengan UUID yang telah di-generate. 
 
-### Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut padahal kita sudah memiliki class UserRoleServiceImpl.java
-Adanya class UserDetailServiceImpl.java bertujuan untuk authentication yang mana username dan password yang dimasukkan oleh user dicek apakah cocok dengan username dan password yang telah tersimpan di database. Sedangkan class UserRoleServiceImpl.java bertujuan untuk menentukan method atau aktivitas apa saja yang dapat dilakukan oleh user role di database.
+### Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut?
+Adanya class UserDetailServiceImpl.java bertujuan untuk authentication yang mana username dan password yang dimasukkan oleh user dicek apakah cocok dengan username dan password yang telah tersimpan di database. 
 
 
 
