@@ -24,72 +24,51 @@
                 <br>
                 <form th:action="@{/cabang/add}" th:object="${cabang}" method="POST">
                     Nama Cabang : <br>
-                    <input required class="form-control" type="text" name="namaCabang"
-                           th:if="${cabang.namaCabang == null}" />
-                    <input required class="form-control" type="text" name="namaCabang"
-                           th:if="${cabang.namaCabang != null}" th:field="${cabang.namaCabang}"/>
+                    <input required class="form-control" th:field="*{namaCabang}" type="text" name="namaCabang"/>
                     <br><br>
 
                     Alamat : <br>
-                    <input required class="form-control" type="text" name="alamatCabang"
-                           th:if="${cabang.alamatCabang == null}" />
-                    <input required class="form-control" type="text" name="alamatCabang"
-                           th:if="${cabang.alamatCabang != null}" th:field="${cabang.alamatCabang}"/>
+                    <input required class="form-control" th:field="*{alamatCabang}" type="text" name="alamatCabang"/>
                     <br><br>
 
                     Nomor Telepon : <br>
-                    <input required class="form-control" type="text" name="noTeleponCabang"
-                           th:if="${cabang.noTeleponCabang == null}" />
-                    <input required class="form-control" type="text" name="noTeleponCabang"
-                           th:if="${cabang.noTeleponCabang != null}" th:field="${cabang.noTeleponCabang}"/>
+                    <input required class="form-control" th:field="*{noTeleponCabang}" type="text" name="noTeleponCabang"/>
                     <br><br>
 
                     Waktu Buka : <br>
-                    <input required class="form-control" type="time" name="waktuBuka"
-                           th:if="${cabang.waktuBuka == null}" />
-                    <input required class="form-control" type="time" name="waktuBuka"
-                           th:if="${cabang.waktuBuka != null}" th:field="${cabang.waktuBuka}"/>
+                    <input required class="form-control" th:field="*{waktuBuka}" type="time" name="waktuBuka" />
                     <br><br>
 
                     Waktu Tutup : <br>
-                    <input required class="form-control" type="time" name="waktuTutup"
-                           th:if="${cabang.waktuTutup == null}" />
-                    <input required class="form-control" type="time" name="waktuTutup"
-                           th:if="${cabang.waktuTutup != null}" th:field="${cabang.waktuTutup}"/>
+                    <input required class="form-control" th:field="*{waktuTutup}" type="time" name="waktuTutup" />
                     <br><br>
+
                     <table class="table">
                         <thead>
-                        <tr>
-                            <th>Nama menu</th>
-                            <th>
-                                <button class="btn btn-primary" type="submit" name="addRow">Tambah row</button>
-                            </th>
-                        </tr>
+                        <th>Nama Menu</th>
+                        <th>
+                            <button class="btn btn-primary" type="submit" name="addRow">Tambah Row</button>
+                        </th>
                         </thead>
                         <tbody>
-                        <tr>
+                        <tr th:each="menu, iterationStatus : *{listMenu}">
                             <td>
-                                <input required class="form-control" type="hidden" name="listMenu"/>
-                                <div th:each="i: ${#numbers.sequence(1, count)}">
-                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                        <div th:each="menu, iterationStatus : ${listMenu}">
-                                            <option th:value="${menu}" th:text="${menu.namaMenu}"/>
-                                        </div>
-                                    </select>
-                                    <br><br>
-                                </div>
+                                <select name="noMenu" th:field="*{listMenu[__${iterationStatus.index}__].noMenu}"
+                                        class="form-control">
+                                    <div th:each="menuEx, iterationStatus2 : ${listMenuExisting}">
+                                        <option th:value="${menuEx.noMenu}" th:text="${menuEx.namaMenu}"></option>
+                                    </div>
+                                </select>
                             </td>
                             <td>
-                                <div th:each="i: ${#numbers.sequence(1, count)}">
-                                    <button class="btn btn-danger" type="submit" name="deleteRow">Hapus</button>
-                                    <br><br>
-                                </div>
-                                <br><br>
+                                <button th:value="${iterationStatus.index}" class="btn btn-danger" type="submit"
+                                        name="deleteRow">Hapus</button>
                             </td>
                         </tr>
                         </tbody>
                     </table>
-                    <button class="btn btn-primary" type="submit">Submit</button>
+
+                    <button class="btn btn-primary" type="submit" name="save">Submit</button>
                     <a class="btn btn-primary" href="/">Cancel</a>
                 </form>
             </div>

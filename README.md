@@ -4,6 +4,23 @@
 
 
 ---
+## Tutorial 5
+
+### Apa itu Postman? Apa kegunaannya?
+Postman merupakan suatu aplikasi yang digunakan untuk melakukan testing terhadap API. Aplikasi ini tentu sangat berguna bagi developer, terutama bagian backend dalam menguji apakah REST API yang telah dibuat sudah sesuai atau belum.
+
+### Jelaskan fungsi dari anotasi @JsonIgnoreProperties dan @JsonProperty.
+@JsonIgnoreProperties digunakan dengan tujuan agar data yang ada pada suatu variable tidak dapat dimasukan secara manual. @JsonProperty digunakan dengan tujuan agar ketika objek diserialisasi dengan menggunakan library Jackson, bidang akan memiliki nama tertentu.
+
+### Apa kegunaan atribut WebClient?
+Atribut WebClient pada SpringBoot merupakan klien web non-pemblokiran dan reaktif yang mana digunakan untuk melakukan permintaan HTTP dengan menggunakan fitur pada webflux library.
+
+### Apa itu ResponseEntity dan BindingResult? Apa kegunaannya?
+ResponseEntity merupakan extention dari HttpEntity yang mewakili HTTP response, termasuk status, header, serta isinya. ResponseEntity memungkinkan kita untuk megubah mengubah respons dengan optional header dan status code. BindingResult adalah suatu interface yang dapat menentukan menentukan bagaimana suatu objek yang menyimpan hasil validasi harus menyimpan serta mengambil hasil validasi tersebut yang mana berisi kesalahan yang mungkin terjadi.
+
+
+
+---
 ## Tutorial 4
 
 ### Jelaskan perbedaan th:include dan th:replace!
