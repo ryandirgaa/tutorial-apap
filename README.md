@@ -12,6 +12,9 @@ Otentikasi merupakan proses verifikasi pengguna ketika akan mengakses ke suatu s
 ### Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerja dan tujuannya.
 BCryptPasswordEncoder merupakan implementasi dari password encoder menggunakan algoritma BCrypt (one-way hashing). Tujuan dari implementasi tersebut adalah untuk meningkatkan keamanan password. Ketika kode disimpan ke dalam database, kode tersebut akan dibalikkan kepada semula saat melakukan signup yang nanti akan dibandingkan dengan password yang dimasukkan ketika log in apakah sama atau tidak.
 
+### Apakah penyimpanan password sebaiknya menggunakan encryption atau hashing? Mengapa demikian?
+Penyimpanan password sebaiknya menggunakan hashing. Hal tersebut dikarenakan hashing bisa dikatakan lebih aman karena kita akan sulit untuk meraih bentuk password semula ketika kita telah mengubah bentuk password ke dalam hash. Lain hal dengan encryption yang mana kita dapat lebih mudah meraih password ke bentuk semula karena encryption menerapkan two-way.
+
 ### Jelaskan secara singkat apa itu UUID beserta penggunaannya!
 UUID merupakan kumpulan dari 32 character yang disusun secara acak dengan tujuan menjamin bahwa setiap data bersifat unik yang mana sangat kecil kemungkinan terdapat UUID yang sama dengan UUID yang telah di-generate. 
 
