@@ -8,11 +8,16 @@
 
 ### Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi dari apa yang Anda jelaskan.
 Soal 1 bertujuan untuk melakukan delete item dari cart. Sebenarnya cara mengerjakannya sama seperti ketika kita menghandle dalam menambahkan item ke cart, yaitu handleAddItemToCart. Perbedaannya terdapat pada if statement yang mana pada handleDeleteItemFromCart condition-nya adalah targetInd >= 0. Selain itu, kita juga perlu mengubah nilai newItem.inCart menjadi false. Kemudian dilanjutkan dengan melakukan splice (newItems.splice(newItem)).
-
+![Question1](https://user-images.githubusercontent.com/90308675/143254640-a00c85c0-fa7c-4b99-90d8-e97e9a69ead1.png)
+![Question1Func](https://user-images.githubusercontent.com/90308675/143254789-41f69276-0995-4626-ab2b-206b17588fb8.png)
+---
 Soal 2 bertujuan untuk menyesuaikan balance ketika menambahkan item ke cart maupun menghapus item dari cart. Hal tersebut dilakukan hanya melakukan set terhadap nilai balance. Jika menambahkan item ke dalam cart, maka balance dikurang dengan harga item yang ditambahkan. Sedangkan jika menghapus item dari cart, maka balance ditambah dengan harga item yang ingin dihapus.
-
+![Question2](https://user-images.githubusercontent.com/90308675/143256079-2387775f-e000-4a50-826a-b9c90f55630f.PNG)
+![Question2Func](https://user-images.githubusercontent.com/90308675/143256120-5d1b8543-c303-432e-b472-47d6d6a9fdb1.PNG)
+---
 Soal 3 bertujuan untuk memberi notifikasi tidak dapat menambahkan item ke dalam cart apabila balance yang dimiliki ternyata tidak cukup. Caranya adalah hanya memodifikasi bagian handleAddItemToCart yang mana kita hanya menambahkan if statement dengan condition harga item yang ditambahkan lebih dari nilai balance saat itu. Jika tidak memenuhi kondisi tersebut, maka akan muncul notifikasi. Cara membuatnya notifikasi adalah dengan menggunakan alert.
-
+![Question3](https://user-images.githubusercontent.com/90308675/143255052-b1774764-f0d1-4f23-9155-44c27ef72e8c.png)
+---
 ### Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?
 Dari penggunaannya, sebenarnya state dan props dapat digunakan sekaligus pada component yang sama, tergantung dengan kondisinya saja kapan salah satu tersebut tepat untuk digunakan. State digunakan ketika kita ingin mengolah data yang bersifat internet yang mana hanya berada di dalam component itu sendiri. Sedangkan props digunakan ketika ingin berkomunikasi (melempar data) dengan component lainnya.
 
