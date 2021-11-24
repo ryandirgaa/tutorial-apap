@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
     <meta charset="UTF-8">
@@ -18,14 +19,25 @@
 <nav th:replace="fragments/fragment :: navbar('Home')"/>
 <div class="d-flex justify-content-center">
     <div class="m-4">
+        <div class="d-flex justify-content-center">
+            <h2 th:text="'Hello ' + ${#httpServletRequest.remoteUser} + ' !'">Login as</h2>
+        </div>
         <h2>Selamat Datang di Emsidi</h2>
         <div class="d-flex justify-content-center">
             <a th:href="@{/cabang/viewall}" class="mx-2 btn btn-dark">Lihat semua cabang</a>
-            <a th:href="@{/cabang/add}" class="mx-2 btn btn-outline-dark">Tambah cabang</a>
+            <div sec:authorize="hasAuthority('Manajer')">
+                <a th:href="@{/cabang/add}" class="mx-2 btn btn-outline-dark">Tambah cabang</a>
+            </div>
+
         </div>
         <div class="my-3 d-flex justify-content-center">
             <a th:href="@{/menu/viewall}" class="mx-2 btn btn-dark">Lihat semua menu</a>
-            <a th:href="@{/menu/add}" class="mx-2 btn btn-outline-dark">Tambah menu</a>
+            <div sec:authorize="hasAuthority('Manajer')">
+                <a th:href="@{/menu/add}" class="mx-2 btn btn-outline-dark">Tambah menu</a>
+            </div>
+        </div>
+        <div class="my-3 d-flex justify-content-center">
+            <a th:href="@{/user/view}" class="mx-2 btn btn-dark">Lihat semua user</a>
         </div>
     </div>
 </div>

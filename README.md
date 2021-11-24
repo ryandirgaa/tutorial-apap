@@ -4,6 +4,26 @@
 
 
 ---
+## Tutorial 6
+
+### Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda buat) konsep tersebut diimplementasi?
+Otentikasi merupakan proses verifikasi pengguna ketika akan mengakses ke suatu sistem. Otentikasi terjadi ketika user memasukkan username dan password. Contoh pada lab ini, yaitu pada file UserDetailService.java serta PageController.java. Sedangkan otorisasi merupakan proses pemberian izin untuk menggunakan resource dengan tujuan keamanan informasi serta keamanan komputer. Hal ini diimplementasikan dengan pembatasan konten yang ingin ditampilkan berdasarkan role atau profil user. Contoh pada lab ini, yaitu pada file WebSecurityConfig.java yang mana berfungsi untuk memjadikan konten tidak ditampilkan untuk semua role.
+
+### Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerja dan tujuannya.
+BCryptPasswordEncoder merupakan implementasi dari password encoder menggunakan algoritma BCrypt (one-way hashing). Tujuan dari implementasi tersebut adalah untuk meningkatkan keamanan password. Ketika kode disimpan ke dalam database, kode tersebut akan dibalikkan kepada semula saat melakukan signup yang nanti akan dibandingkan dengan password yang dimasukkan ketika log in apakah sama atau tidak.
+
+### Apakah penyimpanan password sebaiknya menggunakan encryption atau hashing? Mengapa demikian?
+Penyimpanan password sebaiknya menggunakan hashing. Hal tersebut dikarenakan hashing bisa dikatakan lebih aman karena kita akan sulit untuk meraih bentuk password semula ketika kita telah mengubah bentuk password ke dalam hash. Lain hal dengan encryption yang mana kita dapat lebih mudah meraih password ke bentuk semula karena encryption menerapkan two-way.
+
+### Jelaskan secara singkat apa itu UUID beserta penggunaannya!
+UUID merupakan kumpulan dari 32 character yang disusun secara acak dengan tujuan menjamin bahwa setiap data bersifat unik yang mana sangat kecil kemungkinan terdapat UUID yang sama dengan UUID yang telah di-generate. 
+
+### Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut?
+Adanya class UserDetailServiceImpl.java bertujuan untuk authentication yang mana username dan password yang dimasukkan oleh user dicek apakah cocok dengan username dan password yang telah tersimpan di database. 
+
+
+
+---
 ## Tutorial 5
 
 ### Apa itu Postman? Apa kegunaannya?

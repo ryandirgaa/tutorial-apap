@@ -48,6 +48,17 @@ public class PegawaiRestServiceImpl implements PegawaiRestService {
     }
 
     @Override
+    public List<PegawaiModel> getPegawaiByJenisKelamin(int jenisKelamin){
+        return pegawaiDb.findByJenisKelamin(jenisKelamin);
+//        if(pegawai.isPresent()) {
+//            return pegawai.get();
+//        }
+//        else{
+//            throw new NoSuchElementException();
+//        }
+    }
+
+    @Override
     public PegawaiModel updatePegawai(Long noPegawai, PegawaiModel pegawaiUpdate){
         PegawaiModel pegawai = getPegawaiByNoPegawai(noPegawai);
         pegawai.setNamaPegawai(pegawaiUpdate.getNamaPegawai());
