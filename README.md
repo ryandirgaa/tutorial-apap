@@ -13,6 +13,11 @@ Untuk nomor ini, tidak ada yang saya lakukan karena ketika selesai add item dan 
 Async dan await merupakan sintak khusus yang dipakai untuk bekerja dengan promise agar dapat memmudahkan dalam penggunaan. Async sendiri berfungsi untuk mengembalikan return value berupa objek. Sedangkan await sendiri berfungsi untuk memberitahu program untuk menunda jalannya async hingga proses selesai dieksekusi.
 
 ### Masukkan jawaban dari Screenshot yang diperintahkan di halaman 9 pada Component Lifecycle pada pertanyaan ini.
+![b](https://user-images.githubusercontent.com/90308675/144249317-e33eb57a-41cc-4c40-aa21-b35739546578.PNG)
+![c](https://user-images.githubusercontent.com/90308675/144249356-c94df1a3-b30e-4f69-9e6a-5773e2825c16.PNG)
+![a](https://user-images.githubusercontent.com/90308675/144249363-df0ef19c-4f03-4824-be99-f859f8052cfd.PNG)
+![d](https://user-images.githubusercontent.com/90308675/144249515-e7ad247f-d9d5-46e4-8d9a-d014cbf8f1ab.PNG)
+![e](https://user-images.githubusercontent.com/90308675/144249531-ffb349aa-be99-4028-b44f-5b5a8951a2de.PNG)
 
 ### Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount.
 - componentDidMount biasanya digunakan untuk mengambil data dan menandakan tahap akhir dari mounting lifecycle. Fungsi ini dipanggil setelah HTML yang dirender selesai proses loading. Case yang biasanya menggunakan fungsi ini adalah pengambilan data dari web lain untuk dirender.
