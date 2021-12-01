@@ -38,6 +38,21 @@ public class UserController {
         }
     }
 
+    public boolean validateEmail(String email){
+        boolean isUnique = true;
+        List<UserModel> listUser = userService.getUserList();
+        for(int i=0; i<listUser.size(); i++){
+            if(email.equals(listUser.get(i).getEmail())){
+                isUnique = false;
+                break;
+            }
+            else{
+                continue;
+            }
+        }
+        return isUnique;
+    }
+
     @GetMapping(value = "/view")
     private String viewUserList(Model model){
         List<UserModel> listUser = userService.getUserList();
@@ -62,8 +77,13 @@ public class UserController {
         String returnStr = "";
 
         if (validatePassword(user.getPassword())) {
-            userService.addUser(user);
-            returnStr = "redirect:/";
+            if(validateEmail(user.getEmail())){
+                userService.addUser(user);
+                returnStr = "redirect:/";
+            }
+            else{
+                returnStr = "failed";
+            }
         }
         else {
             returnStr = "failed";
