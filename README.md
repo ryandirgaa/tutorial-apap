@@ -4,6 +4,24 @@
 
 
 ---
+## Tutorial 8
+
+### Ceritakan langkah - langkah yang kalian lakukan untuk solve LATIHAN no.1, dan mengapa kalian melakukan langkah - langkah tersebut?
+Untuk nomor ini, tidak ada yang saya lakukan karena ketika selesai add item dan menekan tombol add item lagi, tidak ada value dari item sebelumnya pada form.
+
+### Jelaskan fungsi dari async dan await!
+Async dan await merupakan sintak khusus yang dipakai untuk bekerja dengan promise agar dapat memmudahkan dalam penggunaan. Async sendiri berfungsi untuk mengembalikan return value berupa objek. Sedangkan await sendiri berfungsi untuk memberitahu program untuk menunda jalannya async hingga proses selesai dieksekusi.
+
+### Masukkan jawaban dari Screenshot yang diperintahkan di halaman 9 pada Component Lifecycle pada pertanyaan ini.
+
+### Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount.
+- componentDidMount biasanya digunakan untuk mengambil data dan menandakan tahap akhir dari mounting lifecycle. Fungsi ini dipanggil setelah HTML yang dirender selesai proses loading. Case yang biasanya menggunakan fungsi ini adalah pengambilan data dari web lain untuk dirender.
+- shouldComponentUpdate biasanya digunakan untuk menentukan suatu komponen yang mengalami perubahan akan ditampilkan ulang atau tidak. Fungsi ini akan mengembalikan nilai true atau false. Case yang biasanya menggunakan fungsi ini adalah pengubahan terhadap komponen serta me-render kembali.
+- componentDidUpdate memiliki fungsi yang sama dengan dengan componentDidMount. Fungsi ini biasanya digunakan ketika ingin berinteraksi environment non-React, misalnya API. Case yang biasanya menggunakan fungsi ini adalah update pada komponen.
+- componentWillReceiveProps biasanya berjalan ketika state yang ada di komponen akan diupdate atau diubah dengan value props baru. Case yang biasanya menggunakan fungsi ini adalah melakukan reset state.
+- componentWillUnmount digunakan ketika komponen dihapus atau dilepas dari DOM. Fungsi ini dipanggil selama fase unmount dari React Life-cycle yaitu sebelum komponen dilepas. Case yang biasanya menggunakan fungsi ini adalah penghapusan interval waktu fungsi berjalan.
+
+---
 ## Tutorial 7
 
 ### Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi dari apa yang Anda jelaskan.

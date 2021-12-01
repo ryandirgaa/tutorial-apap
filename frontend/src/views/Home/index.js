@@ -8,6 +8,7 @@ import { Fab } from "@material-ui/core";
 import ViewStreamIcon from '@mui/icons-material/ViewStream';
 
 
+
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -16,6 +17,7 @@ export default class Home extends React.Component {
             cartItems: [],
             cartHidden: true,
             balance: 120,
+            color : 'white'
         };
     }
    
@@ -62,10 +64,17 @@ export default class Home extends React.Component {
         const cartHidden = this.state.cartHidden;
         this.setState({ cartHidden: !cartHidden });
     };
+
+    changeBg = color => {
+        this.setState({ color });
+    }
    
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container-fluid" style={{background : this.state.color}}>
+
+                <button onClick={() => this.changeBg("grey")}>Change Background</button>
+
                 <h1 className="text-center mt-3 mb-0">Mini Commerce</h1>
                 <div style={{ position: "fixed", top: 25, right: 25 }}>
                     <Fab variant="extended" onClick={this.handleToggle}>
