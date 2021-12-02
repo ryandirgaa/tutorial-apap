@@ -149,22 +149,27 @@ class ItemList extends Component {
         }
     }
 
-    async findItem(text){
-        if(text === "") this.loadData();
-        else{
-            const filtered = this.state.items.filter(items => {
-                return items.title.toLowerCase().includes(text.toLowerCase())
-            })
-            this.setState({input: text});
-            this.setState({items: filtered});
+    async loadFilteredItem(text) {
+        try {
+            const { data } = await APIConfig.get(`/item?title=${text}`);
+            this.setState({ items: data.result });
+        } 
+        catch (error) {
+            alert("Oops terjadi masalah pada server");
+            console.log(error);
         }
     }
-    
+
+    async findItem(text) {
+        this.loadFilteredItem(text);
+    }
 
     render() {
         return (
             <div className={classes.itemList}>
                 <h1 className={classes.title}>All Items</h1>
+                <div style={{ position: "fixed", top: 25, right: 25 }}>
+                </div>
                 <SearchBar handleChange={(e) => this.findItem(e.target.value)}/>
                 <br></br><br></br>
                 <Button action={this.handleAddItem}>Add Item</Button>
