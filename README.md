@@ -4,6 +4,29 @@
 
 
 ---
+## Tutorial 8
+
+### Ceritakan langkah - langkah yang kalian lakukan untuk solve LATIHAN no.1, dan mengapa kalian melakukan langkah - langkah tersebut?
+Untuk nomor ini, tidak ada yang saya lakukan karena ketika selesai add item dan menekan tombol add item lagi, tidak ada value dari item sebelumnya pada form.
+
+### Jelaskan fungsi dari async dan await!
+Async dan await merupakan sintak khusus yang dipakai untuk bekerja dengan promise agar dapat memmudahkan dalam penggunaan. Async sendiri berfungsi untuk mengembalikan return value berupa objek. Sedangkan await sendiri berfungsi untuk memberitahu program untuk menunda jalannya async hingga proses selesai dieksekusi.
+
+### Masukkan jawaban dari Screenshot yang diperintahkan di halaman 9 pada Component Lifecycle pada pertanyaan ini.
+![b](https://user-images.githubusercontent.com/90308675/144249317-e33eb57a-41cc-4c40-aa21-b35739546578.PNG)
+![c](https://user-images.githubusercontent.com/90308675/144249356-c94df1a3-b30e-4f69-9e6a-5773e2825c16.PNG)
+![a](https://user-images.githubusercontent.com/90308675/144249363-df0ef19c-4f03-4824-be99-f859f8052cfd.PNG)
+![d](https://user-images.githubusercontent.com/90308675/144249515-e7ad247f-d9d5-46e4-8d9a-d014cbf8f1ab.PNG)
+![e](https://user-images.githubusercontent.com/90308675/144249531-ffb349aa-be99-4028-b44f-5b5a8951a2de.PNG)
+
+### Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount.
+- componentDidMount biasanya digunakan untuk mengambil data dan menandakan tahap akhir dari mounting lifecycle. Fungsi ini dipanggil setelah HTML yang dirender selesai proses loading. Case yang biasanya menggunakan fungsi ini adalah pengambilan data dari web lain untuk dirender.
+- shouldComponentUpdate biasanya digunakan untuk menentukan suatu komponen yang mengalami perubahan akan ditampilkan ulang atau tidak. Fungsi ini akan mengembalikan nilai true atau false. Case yang biasanya menggunakan fungsi ini adalah pengubahan terhadap komponen serta me-render kembali.
+- componentDidUpdate memiliki fungsi yang sama dengan dengan componentDidMount. Fungsi ini biasanya digunakan ketika ingin berinteraksi environment non-React, misalnya API. Case yang biasanya menggunakan fungsi ini adalah update pada komponen.
+- componentWillReceiveProps biasanya berjalan ketika state yang ada di komponen akan diupdate atau diubah dengan value props baru. Case yang biasanya menggunakan fungsi ini adalah melakukan reset state.
+- componentWillUnmount digunakan ketika komponen dihapus atau dilepas dari DOM. Fungsi ini dipanggil selama fase unmount dari React Life-cycle yaitu sebelum komponen dilepas. Case yang biasanya menggunakan fungsi ini adalah penghapusan interval waktu fungsi berjalan.
+
+---
 ## Tutorial 7
 
 ### Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi dari apa yang Anda jelaskan.
